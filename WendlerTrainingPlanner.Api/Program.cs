@@ -7,9 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services
-    .AddControllers();
-    //.AddNewtonsoftJson();
+builder.Services.AddControllers();
 
 builder.Services.AddApiVersioning(o =>
 {
@@ -37,7 +35,15 @@ if (app.Environment.IsDevelopment())
     });
 }
 
-app.UseHttpsRedirection();
+//app.UseCors(builder => builder
+//    .AllowAnyOrigin()
+//    .AllowAnyMethod()
+//    .AllowAnyHeader());
+//app.UseMvc();
+
+// TODO
+//app.UseHttpsRedirection();
+
 app.UseRouting();
 
 app.UseErrorHandlingMiddleware();

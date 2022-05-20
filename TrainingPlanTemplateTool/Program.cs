@@ -5,7 +5,8 @@ using WendlerTrainingPlanner.Api.Contracts.Dtos;
 using WendlerTrainingPlanner.Api.Contracts.Dtos.AccessoryExercise;
 using WendlerTrainingPlanner.Api.Contracts.V1.Requests.TrainingPlanTemplate;
 
-var restClient = new RestClient("https://wendler-training-planner-api.com");
+//var restClient = new RestClient("https://wendler-training-planner-api.com");
+var restClient = new RestClient("http://wendler-training-planner-api.com");
 //var restClient = new RestClient("https://localhost:44300");
 var wendlerTrainingPlannerApiClient = new ApiClientV1(restClient);
 
