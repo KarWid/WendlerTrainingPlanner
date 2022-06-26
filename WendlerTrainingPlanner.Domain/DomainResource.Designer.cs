@@ -88,6 +88,33 @@ namespace WendlerTrainingPlanner.Domain {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Aggregate {0} was not found..
+        /// </summary>
+        public static string ExceptionMessageAggregateNotFound {
+            get {
+                return ResourceManager.GetString("ExceptionMessageAggregateNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An event of type {0} was tried to save from {1} but no id where set on either..
+        /// </summary>
+        public static string ExceptionMessageAggregateOrEventMissingId {
+            get {
+                return ResourceManager.GetString("ExceptionMessageAggregateOrEventMissingId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} has no constructor without paramerters. This can be either public or private..
+        /// </summary>
+        public static string ExceptionMessageMissingParameterLessConstructorException {
+            get {
+                return ResourceManager.GetString("ExceptionMessageMissingParameterLessConstructorException", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Order of exercises is not valid..
         /// </summary>
         public static string ExercisesIncorrectOrder {

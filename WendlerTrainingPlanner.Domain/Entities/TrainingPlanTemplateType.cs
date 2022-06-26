@@ -6,15 +6,17 @@
 
     public class TrainingPlanTemplateType : BaseEntity<TrainingPlanTemplateTypeId>
     {
-        public string Name { get; }
-        public bool IsLeader { get; }
+        private string _name;
+        private bool _isLeader;
+
+        public bool IsLeader => _isLeader;
 
         public TrainingPlanTemplateType(string name, bool isLeader)
         {
-            if (string.IsNullOrEmpty(name)) throw new DomainArgumentException(DomainResource.ArgumentNotValid, "Name");
+            if (string.IsNullOrEmpty(name)) throw new DomainArgumentException(DomainResource.ArgumentNotValid, nameof(name));
 
-            Name = name;
-            IsLeader = isLeader;
+            _name = name;
+            _isLeader = isLeader;
         }
     }
 }

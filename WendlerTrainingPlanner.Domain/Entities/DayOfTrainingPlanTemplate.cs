@@ -8,11 +8,10 @@
 
     public class DayOfTrainingPlanTemplate : Entity<DayOfTrainingPlanTemplateId, DayOfTrainingPlanTemplateUniqueId>
     {
-        public DayOfWeek DayOfWeek { get; }
-        public MainExercise MainExercise { get; }
-        public Weight MainExerciseWeight { get; }
-
-        public AccessoryExercises AccessoryExercises {get;}
+        private DayOfWeek _dayOfWeek;
+        private MainExercise _mainExercise;
+        private Weight _mainExerciseWeight;
+        private AccessoryExercises _accessoryExercises;
 
         public DayOfTrainingPlanTemplate(
             DayOfWeek dayOfWeek, 
@@ -24,10 +23,10 @@
             if (mainExercise is null) throw new DomainArgumentException(DomainResource.ArgumentCannotBeNull, "Main exercise");
             if (mainExerciseWeight is null) throw new DomainArgumentException(DomainResource.ArgumentCannotBeNull, "Main exercise weight");
 
-            DayOfWeek = dayOfWeek;
-            MainExercise = mainExercise;
-            MainExerciseWeight = mainExerciseWeight;
-            AccessoryExercises = accessoryExercises;
+            _dayOfWeek = dayOfWeek;
+            _mainExercise = mainExercise;
+            _mainExerciseWeight = mainExerciseWeight;
+            _accessoryExercises = accessoryExercises;
         }
     }
 }

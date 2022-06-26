@@ -25,8 +25,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WendlerTrainingPlanner.DomainEvents", "WendlerTrainingPlanner.DomainEvents\WendlerTrainingPlanner.DomainEvents.csproj", "{39013106-4292-4255-AD29-4D1B2FE7BAFB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WendlerTrainingPlanner.Application.Common", "WendlerTrainingPlanner.Application.Common\WendlerTrainingPlanner.Application.Common.csproj", "{43F2A0BA-C278-4FC0-A370-8F7F6A57152D}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WendlerTrainingPlanner.Application.Contracts", "WendlerTrainingPlanner.Application.Contracts\WendlerTrainingPlanner.Application.Contracts.csproj", "{A2C1EE57-7AFF-407D-9FD9-C6E56E0D22FF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WendlerTrainingPlanner.Application.CQRS", "WendlerTrainingPlanner.Application.CQRS\WendlerTrainingPlanner.Application.CQRS.csproj", "{0083D836-CFD4-49EB-97BD-5D3512F26407}"
@@ -41,7 +39,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrainingPlanTemplateTool", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WendlerTrainingPlanner.Api.Tests", "WendlerTrainingPlanner.Api.Tests\WendlerTrainingPlanner.Api.Tests.csproj", "{24C6103D-237B-4F95-83FB-F78E8FFA1918}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WendlerTrainingPlanner.Api.Contracts", "WendlerTrainingPlanner.Api.Contracts\WendlerTrainingPlanner.Api.Contracts.csproj", "{FFA8389D-E5C0-4A10-B8E2-5562E2321683}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WendlerTrainingPlanner.Api.Contracts", "WendlerTrainingPlanner.Api.Contracts\WendlerTrainingPlanner.Api.Contracts.csproj", "{FFA8389D-E5C0-4A10-B8E2-5562E2321683}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WendlerTrainingPlanner.Infrastructure.EventStoreAndBus", "WendlerTrainingPlanner.Infrastructure.EventStoreAndBus\WendlerTrainingPlanner.Infrastructure.EventStoreAndBus.csproj", "{ABAF6289-9714-40F6-A1ED-A1A1F47588D8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PluginsEventStore", "PluginsEventStore", "{D55FEA42-1569-45E2-893F-96BC38B9A0D9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WendlerTrainingPlanner.Infrastructure.EventStorePlugin.MongoDb", "WendlerTrainingPlanner.Infrastructure.EventStorePlugin.MongoDb\WendlerTrainingPlanner.Infrastructure.EventStorePlugin.MongoDb.csproj", "{0D12B821-40B8-4281-8F31-B3B4EFD58618}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WendlerTrainingPlanner.Application.Tests", "WendlerTrainingPlanner.Application.Tests\WendlerTrainingPlanner.Application.Tests.csproj", "{4784260D-FA3D-44C4-828E-6C65CA0E25B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WendlerTrainingPlanner.Infrastructure.EF", "WendlerTrainingPlanner.Infrastructure.EF\WendlerTrainingPlanner.Infrastructure.EF.csproj", "{3B3B078D-7EDF-442D-B4FE-150E2A69E226}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WendlerTrainingPlanner.Infrastructure.EF.Migrations", "WendlerTrainingPlanner.Infrastructure.EF.Migrations\WendlerTrainingPlanner.Infrastructure.EF.Migrations.csproj", "{47A7B377-3942-4F7A-ACD2-F1BB6D95BE16}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,10 +75,6 @@ Global
 		{39013106-4292-4255-AD29-4D1B2FE7BAFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{39013106-4292-4255-AD29-4D1B2FE7BAFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{39013106-4292-4255-AD29-4D1B2FE7BAFB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{43F2A0BA-C278-4FC0-A370-8F7F6A57152D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{43F2A0BA-C278-4FC0-A370-8F7F6A57152D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{43F2A0BA-C278-4FC0-A370-8F7F6A57152D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{43F2A0BA-C278-4FC0-A370-8F7F6A57152D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A2C1EE57-7AFF-407D-9FD9-C6E56E0D22FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A2C1EE57-7AFF-407D-9FD9-C6E56E0D22FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2C1EE57-7AFF-407D-9FD9-C6E56E0D22FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -97,6 +103,26 @@ Global
 		{FFA8389D-E5C0-4A10-B8E2-5562E2321683}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFA8389D-E5C0-4A10-B8E2-5562E2321683}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFA8389D-E5C0-4A10-B8E2-5562E2321683}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABAF6289-9714-40F6-A1ED-A1A1F47588D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABAF6289-9714-40F6-A1ED-A1A1F47588D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABAF6289-9714-40F6-A1ED-A1A1F47588D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABAF6289-9714-40F6-A1ED-A1A1F47588D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D12B821-40B8-4281-8F31-B3B4EFD58618}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D12B821-40B8-4281-8F31-B3B4EFD58618}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D12B821-40B8-4281-8F31-B3B4EFD58618}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D12B821-40B8-4281-8F31-B3B4EFD58618}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4784260D-FA3D-44C4-828E-6C65CA0E25B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4784260D-FA3D-44C4-828E-6C65CA0E25B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4784260D-FA3D-44C4-828E-6C65CA0E25B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4784260D-FA3D-44C4-828E-6C65CA0E25B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B3B078D-7EDF-442D-B4FE-150E2A69E226}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B3B078D-7EDF-442D-B4FE-150E2A69E226}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B3B078D-7EDF-442D-B4FE-150E2A69E226}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B3B078D-7EDF-442D-B4FE-150E2A69E226}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47A7B377-3942-4F7A-ACD2-F1BB6D95BE16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47A7B377-3942-4F7A-ACD2-F1BB6D95BE16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47A7B377-3942-4F7A-ACD2-F1BB6D95BE16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47A7B377-3942-4F7A-ACD2-F1BB6D95BE16}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -111,7 +137,6 @@ Global
 		{D65404C0-2B5A-4F90-9C4B-F420D8051040} = {5165BE3A-076C-40C2-9ACE-F6D47A233ECF}
 		{EE830682-FDF2-4C4D-A3DC-A2409E6F7EBB} = {E8A38691-AF36-4F12-8B31-355994BCC8C3}
 		{39013106-4292-4255-AD29-4D1B2FE7BAFB} = {D65404C0-2B5A-4F90-9C4B-F420D8051040}
-		{43F2A0BA-C278-4FC0-A370-8F7F6A57152D} = {B941F412-A83C-4D0E-A84F-D48FA7132E82}
 		{A2C1EE57-7AFF-407D-9FD9-C6E56E0D22FF} = {B941F412-A83C-4D0E-A84F-D48FA7132E82}
 		{0083D836-CFD4-49EB-97BD-5D3512F26407} = {B941F412-A83C-4D0E-A84F-D48FA7132E82}
 		{B22CA490-F94F-408B-966D-E1F94E8C12E7} = {B941F412-A83C-4D0E-A84F-D48FA7132E82}
@@ -120,6 +145,12 @@ Global
 		{5F30E117-72D9-4E70-A7C9-7EB4F5250AC4} = {26E0F422-4971-47B4-A448-B249522EE8F7}
 		{24C6103D-237B-4F95-83FB-F78E8FFA1918} = {929FB5D3-1DB6-435D-935E-C477E0F4A3E3}
 		{FFA8389D-E5C0-4A10-B8E2-5562E2321683} = {8CFEC25A-6ECD-4EDA-91FC-63D20B1EDA7B}
+		{ABAF6289-9714-40F6-A1ED-A1A1F47588D8} = {EE830682-FDF2-4C4D-A3DC-A2409E6F7EBB}
+		{D55FEA42-1569-45E2-893F-96BC38B9A0D9} = {EE830682-FDF2-4C4D-A3DC-A2409E6F7EBB}
+		{0D12B821-40B8-4281-8F31-B3B4EFD58618} = {D55FEA42-1569-45E2-893F-96BC38B9A0D9}
+		{4784260D-FA3D-44C4-828E-6C65CA0E25B6} = {929FB5D3-1DB6-435D-935E-C477E0F4A3E3}
+		{3B3B078D-7EDF-442D-B4FE-150E2A69E226} = {EE830682-FDF2-4C4D-A3DC-A2409E6F7EBB}
+		{47A7B377-3942-4F7A-ACD2-F1BB6D95BE16} = {EE830682-FDF2-4C4D-A3DC-A2409E6F7EBB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FBDF3978-1184-4BF3-ADB9-D27BE413BA14}

@@ -1,22 +1,27 @@
 ﻿namespace WendlerTrainingPlanner.Domain.Entities
 {
     using WendlerTrainingPlanner.Domain.Ddd;
+    using WendlerTrainingPlanner.Domain.Enums;
     using WendlerTrainingPlanner.Domain.Exceptions;
     using WendlerTrainingPlanner.Domain.ValueObjects;
     using WendlerTrainingPlanner.Domain.ValueObjects.Ids;
 
     public class TrainingPlanTemplate : Entity<TrainingPlanTemplateId, TrainingPlanTemplateUniqueId>
     {
-        // TODO: add a maxlength
-        public string Name { get; private set; }
-        public TrainingPlanTemplateTimeFrom From { get; }
-        public int Cycles { get; }
-        public TrainingMaxPercentage TrainingMaxPercentage { get; }
-        public TrainingPlanTemplateType Type { get; }
-        public IEnumerable<DayOfTrainingPlanTemplate> Days { get; }
+        private string _name;
+        private TrainingPlanTemplateTimeFrom _from;
+        private int _cycles;
+        private TrainingMaxPercentage _trainingMaxPercentage;
+        private TrainingPlanTemplateType _type;
 
-        // public AppUser User {get; set;}
-        // public AppUser? Trainer {get; set;}
+        private readonly List<DayOfTrainingPlanTemplate> _days;
+        public IReadOnlyCollection<DayOfTrainingPlanTemplate> Days => _days;
+
+        public string Name => _name;
+        public TrainingPlanTemplateTimeFrom From => _from;
+        public int Cycles => _cycles;
+        public TrainingMaxPercentage TrainingMaxPercentage => _trainingMaxPercentage;
+        public TrainingPlanTemplateType Type => _type;
 
         public TrainingPlanTemplate(
             string name,
@@ -24,7 +29,7 @@
             TrainingMaxPercentage trainingMaxPercentage,
             TrainingPlanTemplateType type,
             int cycles,
-            IEnumerable<DayOfTrainingPlanTemplate> dayOfTrainingPlanTemplates)
+            List<DayOfTrainingPlanTemplate> dayOfTrainingPlanTemplates)
         {
             int maxDays = 7;
 
@@ -44,19 +49,40 @@
             ValidatedCyclesNumber(type, cycles);
 
             UniqueId = TrainingPlanTemplateUniqueId.NewUniqueId();
-            Name = name;
-            From = from;
-            Cycles = cycles;
-            TrainingMaxPercentage = trainingMaxPercentage;
-            Type = type;
-            Days = dayOfTrainingPlanTemplates;
+            Version = 0;
+            _name = name;
+            _from = from;
+            _cycles = cycles;
+            _trainingMaxPercentage = trainingMaxPercentage;
+            _type = type;
+            _days = dayOfTrainingPlanTemplates;
         }
 
-        protected TrainingPlanTemplate()
+        //protected TrainingPlanTemplate()
+        //{
+        //    // TODO: check if Id also is needed here
+        //    UniqueId = TrainingPlanTemplateUniqueId.NewUniqueId();
+        //    Version = 0;
+        //    Days = new List<DayOfTrainingPlanTemplate>(); // TODO ?? is it correct ?
+        //}
+
+        public TrainingPlanTemplateIds Ids()
         {
-            // TODO: check if Id also is needed here
-            UniqueId = TrainingPlanTemplateUniqueId.NewUniqueId();
-            Days = new List<DayOfTrainingPlanTemplate>(); // TODO ?? is it correct ?
+            if (this.Id is null)
+            {
+                return new TrainingPlanTemplateIds
+                {
+                    UniqueId = this.UniqueId,
+                    CreatedId = this.Id,
+                    Status = IdsStatus.CantReturnCreatedIdWhenYouAreEventSourcing
+                };
+            }
+
+            return new TrainingPlanTemplateIds()
+            {
+                UniqueId = this.UniqueId,
+                CreatedId = this.Id
+            };
         }
 
         private void ValidatedCyclesNumber(TrainingPlanTemplateType type, int cycles)

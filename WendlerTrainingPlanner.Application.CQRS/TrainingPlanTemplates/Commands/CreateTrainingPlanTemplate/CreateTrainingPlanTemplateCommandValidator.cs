@@ -4,9 +4,9 @@
     using WendlerTrainingPlanner.Application.CQRS.Extensions;
     using WendlerTrainingPlanner.Application.CQRS.Resources;
 
-    internal class CreateTrainingPlanTemplateCommandValidator : AbstractValidator<CreateTrainingPlanTemplateCommand>
+    public class CreateTrainingPlanTemplateCommandValidator : AbstractValidator<CreateTrainingPlanTemplateCommand>
     {
-        internal CreateTrainingPlanTemplateCommandValidator()
+        public CreateTrainingPlanTemplateCommandValidator()
         {
             RuleFor(_ => _.Name).NotEmptyMaximumLength(50);
             RuleFor(_ => _.From).LaterThanTodayWithErrorMessage();

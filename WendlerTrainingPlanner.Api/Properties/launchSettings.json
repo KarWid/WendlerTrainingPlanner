@@ -37,7 +37,8 @@
       "launchUrl": "https://wendler-training-planner-api.com",
       "applicationUrl": "https://wendler-training-planner-api.com;http://wendler-training-planner-api.com",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "WENDLER_TRAINING_PLANNER_CONNECTION_STRING": "Server=127.0.0.1; Port=5432; Database=WendlerTrainingPlanner; User Id=WendlerTrainingPlannerUser; Password=SomePassword123."
       }
     }
     //"Docker": {

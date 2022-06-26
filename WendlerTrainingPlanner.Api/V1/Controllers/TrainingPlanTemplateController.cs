@@ -32,7 +32,7 @@
         [ProducesResponseType(typeof(ApiResponse<CreateTrainingPlanTemplateResponse>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status400BadRequest)]
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] CreateTrainingPlanTemplateRequest request, CancellationToken cancellationToken)
+        public async Task<IActionResult> Create([FromBody] CreateTrainingPlanTemplateRequest request, CancellationToken cancellationToken = default)
         {
             var command = _mapper.Map<CreateTrainingPlanTemplateCommand>(request);
 

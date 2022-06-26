@@ -126,6 +126,15 @@
   <data name="ArgumentNotValid" xml:space="preserve">
     <value>{0} is not valid.</value>
   </data>
+  <data name="ExceptionMessageAggregateNotFound" xml:space="preserve">
+    <value>Aggregate {0} was not found.</value>
+  </data>
+  <data name="ExceptionMessageAggregateOrEventMissingId" xml:space="preserve">
+    <value>An event of type {0} was tried to save from {1} but no id where set on either.</value>
+  </data>
+  <data name="ExceptionMessageMissingParameterLessConstructorException" xml:space="preserve">
+    <value>{0} has no constructor without paramerters. This can be either public or private.</value>
+  </data>
   <data name="ExercisesIncorrectOrder" xml:space="preserve">
     <value>Order of exercises is not valid.</value>
   </data>

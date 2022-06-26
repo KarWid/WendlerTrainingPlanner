@@ -11,6 +11,10 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.5" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.6">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.14.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
@@ -19,6 +23,10 @@
   <ItemGroup>
     <ProjectReference Include="..\WendlerTrainingPlanner.Api.Contracts\WendlerTrainingPlanner.Api.Contracts.csproj" />
     <ProjectReference Include="..\WendlerTrainingPlanner.Application.CQRS\WendlerTrainingPlanner.Application.CQRS.csproj" />
+    <ProjectReference Include="..\WendlerTrainingPlanner.Application.EventSourcing\WendlerTrainingPlanner.Application.EventSourcing.csproj" />
+    <ProjectReference Include="..\WendlerTrainingPlanner.Infrastructure.EF.Migrations\WendlerTrainingPlanner.Infrastructure.EF.Migrations.csproj" />
+    <ProjectReference Include="..\WendlerTrainingPlanner.Infrastructure.EF\WendlerTrainingPlanner.Infrastructure.EF.csproj" />
+    <ProjectReference Include="..\WendlerTrainingPlanner.Infrastructure.EventStoreAndBus\WendlerTrainingPlanner.Infrastructure.EventStoreAndBus.csproj" />
   </ItemGroup>
 
   <ItemGroup>

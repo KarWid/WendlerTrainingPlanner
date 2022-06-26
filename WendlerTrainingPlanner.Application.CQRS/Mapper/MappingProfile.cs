@@ -9,8 +9,6 @@
     {
         public MappingProfile()
         {
-            CreateMap<CreateTrainingPlanTemplateCommand, TrainingPlanTemplate>()
-                .ForMember(dest => dest.From, opts => opts.MapFrom(s => new TrainingPlanTemplateTimeFrom(s.From)));
         }
     }
 }

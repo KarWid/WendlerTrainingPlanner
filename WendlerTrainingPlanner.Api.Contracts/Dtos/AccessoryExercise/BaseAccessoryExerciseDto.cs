@@ -30,6 +30,7 @@
                 throw new JsonException();
             }
 
+            // TODO: fix swagger to use TypeDiscriminator
             if (!reader.Read() || reader.TokenType != JsonTokenType.PropertyName || reader.GetString() != "TypeDiscriminator")
             {
                 throw new JsonException();

@@ -20,10 +20,16 @@
             CancellationToken cancellationToken = default)
         {
             var restRequest = new RestRequest($"{_endpointPrefix}/{TRAINING_PLAN_TEMPLATE}", Method.Post);
+
             restRequest.RequestFormat = DataFormat.Json;
             restRequest.AddBody(request);
+
             var result = await _restClient.ExecuteAsync<ApiResponse<CreateTrainingPlanTemplateResponse>>(restRequest, cancellationToken);
-            Console.WriteLine(result.ErrorMessage);
+
+            if (result.ErrorException != null)
+            {
+                throw result.ErrorException;
+            }
 
             return result?.Data;
         }

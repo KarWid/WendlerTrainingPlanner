@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\WendlerTrainingPlanner.DomainEvents\WendlerTrainingPlanner.DomainEvents.csproj" />
+    <ProjectReference Include="..\WendlerTrainingPlanner.Domain\WendlerTrainingPlanner.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

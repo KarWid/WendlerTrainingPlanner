@@ -8,5 +8,5 @@
         int Cycles, 
         float TrainingMaxPercentage, 
         int TrainingPlanTemplateTypeId, 
-        IEnumerable<DayOfTrainingPlanTemplateDto> Days);
+        IList<DayOfTrainingPlanTemplateDto> Days);
 }

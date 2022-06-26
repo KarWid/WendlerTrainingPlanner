@@ -9,16 +9,13 @@
     /// </summary>
     public class MainExercise : BaseEntity<MainExerciseId>
     {
-        public string Name { get; private set; }
+        private string _name;
 
         public MainExercise(string name) 
         {
             if (string.IsNullOrEmpty(name)) throw new DomainArgumentException(DomainResource.ArgumentNotValid, "Name");
 
-            Name = name; 
+            _name = name;
         }
-
-        protected MainExercise() { }
     }
-
 }

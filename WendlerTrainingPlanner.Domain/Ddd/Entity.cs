@@ -2,7 +2,7 @@
 {
     public abstract class BaseEntity<TId>
     {
-        public TId Id { get; protected set; }
+        public TId? Id { get; protected set; }
         public string CreatedBy { get; protected set; } = string.Empty;
         public DateTimeOffset CreatedDate { get; protected set; }
         public string? LastModifiedBy { get; protected set; }

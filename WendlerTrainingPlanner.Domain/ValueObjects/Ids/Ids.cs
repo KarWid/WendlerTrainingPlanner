@@ -7,9 +7,11 @@
         where T1 : ValueObject<T1> 
         where UniqueT2 : ValueObject<UniqueT2>
     {
-        public BaseId<T1> CreatedId { get; set; }
+        public BaseId<T1>? CreatedId { get; set; }
         public BaseUniqueId<UniqueT2> UniqueId { get; set; }
 
         public IdsStatus Status { get; set; }
     }
+
+    public class TrainingPlanTemplateIds : Ids<TrainingPlanTemplateId, TrainingPlanTemplateUniqueId> { }
 }

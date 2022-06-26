@@ -7,6 +7,7 @@
     using WendlerTrainingPlanner.Domain.Exceptions;
     using WendlerTrainingPlanner.Api.Resources;
     using WendlerTrainingPlanner.Api.Contracts.BaseResponses;
+    using AutoMapper;
 
     public class ErrorHandlingMiddleware
     {
@@ -58,6 +59,10 @@
                 case DomainException domainException:
                     response.StatusCode = (int)HttpStatusCode.BadRequest;
                     apiResponseResult = new BussinessLogicErrorApiResponse(domainException.Message);
+                    break;
+                case AutoMapperMappingException domainException:
+                    response.StatusCode = (int)HttpStatusCode.InternalServerError;
+                    apiResponseResult = new BussinessLogicErrorApiResponse(ApiGeneralResource.Something_Went_Wrong);
                     break;
                 default:
                     response.StatusCode = (int)HttpStatusCode.InternalServerError;

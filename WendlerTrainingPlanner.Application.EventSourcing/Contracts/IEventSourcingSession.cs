@@ -1,10 +1,12 @@
 ﻿namespace WendlerTrainingPlanner.Application.EventSourcing.Contracts
 {
-    internal interface IEventSourcingSession
+    using WendlerTrainingPlanner.Domain.ValueObjects.Ids;
+
+    public interface IEventSourcingSession
     {
-        // TODO
-        //ExecutionStatus Add<T>(T aggregate) where T : AggregateRoot;
-        //ExecutionStatus<T> Get<T>(AggregateKey id, int? expectedVersion = null) where T : AggregateRoot;
-        //ExecutionStatus Commit();
+        // TODO: Think about result of methods
+        void Add<T>(T aggregate) where T : AggregateRoot;
+        T Get<T>(AggregateKey id, int? expectedVersion = null) where T : AggregateRoot;
+        void Commit();
     }
 }

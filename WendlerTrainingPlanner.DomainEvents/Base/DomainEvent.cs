@@ -3,6 +3,7 @@
     using WendlerTrainingPlanner.Domain;
     using WendlerTrainingPlanner.Domain.ValueObjects.Ids;
 
+    // TODO: maybe to change to records
     public abstract class DomainEvent : IEvent
     {
         public AggregateKey Key { get; set; }
@@ -18,14 +19,12 @@
 
         protected DomainEvent(int version)
         {
-            TimeStamp = AppTime.Now();
+            TimeStamp = AppTime.UtcNow();
             Version = version;
         }
 
         protected DomainEvent()
         {
-
         }
-
     }
 }

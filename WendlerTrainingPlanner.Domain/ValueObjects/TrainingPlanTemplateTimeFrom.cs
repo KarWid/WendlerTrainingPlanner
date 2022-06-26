@@ -9,7 +9,7 @@
 
         public TrainingPlanTemplateTimeFrom(DateTime value)
         {
-            if ((AppTime.Now() - value).Days < 0)
+            if ((AppTime.UtcNow().Date - value.Date).Days < 0)
             {
                 throw new DomainArgumentException(DomainResource.ArgumentDateCannotBeEarlierThanToday, "Value");
             }

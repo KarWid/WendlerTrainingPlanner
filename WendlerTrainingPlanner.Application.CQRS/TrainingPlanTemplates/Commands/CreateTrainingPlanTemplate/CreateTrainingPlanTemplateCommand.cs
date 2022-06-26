@@ -18,7 +18,7 @@
 
         public CreateTrainingPlanTemplateCommand()
         {
-            Version = 0;
+            Version = 1;
             UniqueId = TrainingPlanTemplateUniqueId.NewUniqueId();
         }
     }

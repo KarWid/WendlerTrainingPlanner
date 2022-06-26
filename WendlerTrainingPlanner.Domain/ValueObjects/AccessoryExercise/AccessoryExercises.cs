@@ -5,14 +5,14 @@
 
     public class AccessoryExercises : ValueObject<AccessoryExercises>
     {
-        public IEnumerable<BaseAccessoryExercise> Value { get; }
+        public IList<BaseAccessoryExercise> Value { get; private set; }
 
-        public AccessoryExercises(IEnumerable<BaseAccessoryExercise> value)
+        public AccessoryExercises(IList<BaseAccessoryExercise> value)
         {
             if (value is null || !value.Any()) throw new DomainArgumentException(DomainResource.ArgumentNotValid, "AccessoryExercises");
 
             var uniqueOrderNumbers = new HashSet<int>(value.Select(_ => _.OrderNumber));
-            if (uniqueOrderNumbers.Count != value.Count())
+            if (uniqueOrderNumbers.Count != value.Count)
             {
                 throw new DomainArgumentException(DomainResource.ExercisesIncorrectOrder);
             }

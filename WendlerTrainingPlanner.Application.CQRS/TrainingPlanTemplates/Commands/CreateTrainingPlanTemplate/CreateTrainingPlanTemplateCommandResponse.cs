@@ -1,7 +1,6 @@
-﻿namespace WendlerTrainingPlanner.Application.CQRS.TrainingPlanTemplates.Commands.CreateTrainingPlanTemplate
+﻿using WendlerTrainingPlanner.Application.CQRS.Mapper.Dtos;
+
+namespace WendlerTrainingPlanner.Application.CQRS.TrainingPlanTemplates.Commands.CreateTrainingPlanTemplate
 {
-    public class CreateTrainingPlanTemplateCommandResponse
-    {
-        // TODO
-    }
+    public record CreateTrainingPlanTemplateCommandResponse(IdsDto TrainingPlanTemplateIds) : BaseResponse;
 }

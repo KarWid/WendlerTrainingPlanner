@@ -15,6 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\WendlerTrainingPlanner.Application.Contracts\WendlerTrainingPlanner.Application.Contracts.csproj" />
+    <ProjectReference Include="..\WendlerTrainingPlanner.Application.EventSourcing\WendlerTrainingPlanner.Application.EventSourcing.csproj" />
     <ProjectReference Include="..\WendlerTrainingPlanner.Domain\WendlerTrainingPlanner.Domain.csproj" />
   </ItemGroup>
 
